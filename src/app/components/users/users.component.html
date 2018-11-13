@@ -1,7 +1,8 @@
+<div class="row"></div>
 <div class="row">
-
-</div>
-<div class="row">
+  <div class="col s12 m10 l8 offset-m1 offset-l2 right-align">
+    <button class="btn" (click)="addUser()">Add User</button>
+  </div>
   <div class="col s12 m10 l8 offset-m1 offset-l2">
     <ul class="collection with-header">
       <li class="collection-header">
@@ -9,7 +10,7 @@
         <a (click)="toggleAll()" href="#!" class="secondary-content">{{ expanded ? 'Collapse' : 'Expand' }}</a>
       </li>
       <li *ngFor="let e of users" class="collection-item">
-        <span class="username">{{e.name}}</span>
+        <span class="username">{{ e.name }}</span>
         <a (click)="toggle(e)" href="#!" class="secondary-content">
           <i *ngIf="!e.expanded" class="material-icons">expand_more</i>
           <i *ngIf="e.expanded" class="material-icons">expand_less</i>
@@ -19,24 +20,23 @@
           <div class="row">
             <div class="col s12 m6">
               <ul>
-                <li>Username: {{e.username}}</li>
-                <li>E-mail: {{e.email}}</li>
-                <li>Phone: {{e.phone}}</li>
-                <li>Website: {{e.website}}</li>
-                <li>Company: {{e.company.name}}</li>
+                <li>Username: {{ e.username }}</li>
+                <li>E-mail: {{ e.email }}</li>
+                <li>Phone: {{ e.phone }}</li>
+                <li>Website: {{ e.website }}</li>
+                <li>Company: {{ e.company.name }}</li>
               </ul>
             </div>
             <div class="col s12 m6">
               <ul>
                 <li>Address:</li>
-                <li>Street: {{e.address.street}}</li>
-                <li>Suite: {{e.address.suite}}</li>
-                <li>City: {{e.address.city}}</li>
-                <li>Zip Code: {{e.address.zipcode}}</li>
+                <li>Street: {{ e.address.street }}</li>
+                <li>Suite: {{ e.address.suite }}</li>
+                <li>City: {{ e.address.city }}</li>
+                <li>Zip Code: {{ e.address.zipcode }}</li>
               </ul>
             </div>
           </div>
-
         </div>
       </li>
     </ul>

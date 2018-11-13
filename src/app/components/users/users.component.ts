@@ -43,4 +43,6 @@ export class UsersComponent implements OnInit {
 
     this.expanded = !this.expanded;
   }
+
+  addUser() {}
 }
