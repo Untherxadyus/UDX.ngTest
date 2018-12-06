@@ -11,9 +11,10 @@ import * as $ from 'jquery';
 import { Sidenav } from 'materialize-css';
 import { UserComponent } from './components/user/user.component';
 import { PostsComponent } from './components/posts/posts.component';
+import { PostFormComponent } from './components/post-form/post-form.component';
 
 @NgModule({
-  declarations: [AppComponent, UsersComponent, NavbarComponent, UserComponent, PostsComponent],
+  declarations: [AppComponent, UsersComponent, NavbarComponent, UserComponent, PostsComponent, PostFormComponent],
   imports: [BrowserModule, FormsModule, HttpClientModule],
   providers: [UsersService, PostsService],
   bootstrap: [AppComponent]

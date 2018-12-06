@@ -14,7 +14,13 @@ export class PostsComponent implements OnInit {
 
   ngOnInit() {
     this.postService.getAll().subscribe(posts => {
-      this.posts = posts;
+      if (posts) {
+        this.posts = posts.reverse();
+      }
     });
+  }
+
+  onNewPost(post: Post) {
+    this.posts.unshift(post);
   }
 }

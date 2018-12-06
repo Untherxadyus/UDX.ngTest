@@ -1,0 +1,25 @@
+<div class="row">
+  <div class="col s12 m6 offset-m3"><h2>Add Post</h2></div>
+</div>
+
+<div class="row">
+  <div class="card col s12 m6 offset-m3">
+    <form action="POST">
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="txt_title" type="text" class="validate" #title /> <label for="txt_title">Title:</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="txt_body" type="text" class="validate" #body /> <label for="txt_title">Body:</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s12">
+          <button (click)="addPost(title.value, body.value)" class="waves-effect waves-light btn">Add post</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
