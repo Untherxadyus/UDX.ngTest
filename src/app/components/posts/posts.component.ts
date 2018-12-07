@@ -9,6 +9,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PostsComponent implements OnInit {
   posts: Post[];
+  currentPost: Post = { id: 0, title: '', body: '' };
+  isEdit: Boolean = false;
 
   constructor(private postService: PostsService) {}
 
@@ -20,7 +22,26 @@ export class PostsComponent implements OnInit {
     });
   }
 
+  editPost(post: Post) {
+    this.currentPost = post;
+    this.isEdit = true;
+    M.updateTextFields();
+  }
+
+  deletePost() {}
+
   onNewPost(post: Post) {
     this.posts.unshift(post);
+  }
+
+  onUpdatedPost(post: Post) {
+    this.posts.forEach((cur, index) => {
+      if (post.id === cur.id) {
+        this.posts.splice(index, 1);
+        this.posts.unshift(post);
+        this.isEdit = false;
+        this.currentPost = { id: 0, title: '', body: '' };
+      }
+    });
   }
 }

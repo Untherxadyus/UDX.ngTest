@@ -3,21 +3,30 @@
 </div>
 
 <div class="row">
-  <div class="card col s12 m6 offset-m3">
+  <div class="col s12 m6 offset-m3">
     <form action="POST">
+      <input type="hidden" name="id" [(ngModel)]="currentPost.id" />
       <div class="row">
         <div class="input-field col s12">
-          <input id="txt_title" type="text" class="validate" #title /> <label for="txt_title">Title:</label>
+          <input id="txt_title" type="text" class="validate" [(ngModel)]="currentPost.title" name="title" />
+          <label for="txt_title" [class.active]="currentPost.title">Title:</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s12">
-          <input id="txt_body" type="text" class="validate" #body /> <label for="txt_title">Body:</label>
+          <input id="txt_body" type="text" class="validate" [(ngModel)]="currentPost.body" name="body" />
+          <label for="txt_title" [class.active]="currentPost.body">Body:</label>
         </div>
       </div>
       <div class="row">
         <div class="col s12">
-          <button (click)="addPost(title.value, body.value)" class="waves-effect waves-light btn">Add post</button>
+          <button *ngIf="!isEdit" (click)="addPost(currentPost)" class="waves-effect waves-light btn blue darken-3">
+            <i class="material-icons"> add </i> Add post
+          </button>
+
+          <button *ngIf="isEdit" (click)="updatePost(currentPost)" class="waves-effect waves-light btn yellow darken-3">
+            <i class="material-icons"> add </i> Edit post
+          </button>
         </div>
       </div>
     </form>

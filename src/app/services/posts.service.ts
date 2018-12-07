@@ -20,6 +20,11 @@ export class PostsService {
     return this.httpClient.post<Post>(url, post, httpOptions);
   }
 
+  update(post: Post): Observable<Post> {
+    const url: string = this.baseUrl + 'posts/' + post.id;
+    return this.httpClient.put<Post>(url, post, httpOptions);
+  }
+
   getAll(): Observable<Post[]> {
     const url: string = this.baseUrl + 'posts';
     return this.httpClient.get<Post[]>(url);
