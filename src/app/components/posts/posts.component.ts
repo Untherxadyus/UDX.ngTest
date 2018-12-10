@@ -1,6 +1,7 @@
 import { Post } from './../../models/Post';
 import { PostsService } from './../../services/posts.service';
 import { Component, OnInit } from '@angular/core';
+import swal from 'sweetalert2';
 
 @Component({
   selector: 'app-posts',
@@ -17,6 +18,7 @@ export class PostsComponent implements OnInit {
   ngOnInit() {
     this.postService.getAll().subscribe(posts => {
       if (posts) {
+        console.log(posts);
         this.posts = posts.reverse();
       }
     });
@@ -25,10 +27,18 @@ export class PostsComponent implements OnInit {
   editPost(post: Post) {
     this.currentPost = post;
     this.isEdit = true;
-    M.updateTextFields();
   }
 
-  deletePost() {}
+  deletePost(post: Post) {
+    console.log('Deleted!');
+    this.postService.delete(post).subscribe(p => {
+      this.posts.forEach((cur, index) => {
+        if (post.id === cur.id) {
+          this.posts.splice(index, 1);
+        }
+      });
+    });
+  }
 
   onNewPost(post: Post) {
     this.posts.unshift(post);

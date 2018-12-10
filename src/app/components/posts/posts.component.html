@@ -20,7 +20,13 @@
         <a class="light-blue-text text-lighten-2" href="#" (click)="editPost(post)"
           ><i class="material-icons"> edit </i> Edit</a
         >
-        <a class="red-text text-lighten-3" href="#"><i class="material-icons"> delete </i> Delete</a>
+        <a
+          class="red-text text-lighten-3"
+          href="#"
+          [swal]="{ title: 'Are you sure?', type: 'question', showCancelButton: 'true' }"
+          (confirm)="deletePost(post)"
+          ><i class="material-icons"> delete </i> Delete</a
+        >
       </div>
     </div>
   </div>

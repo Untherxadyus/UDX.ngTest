@@ -9,13 +9,14 @@ import { UsersComponent } from './components/users/users.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import * as $ from 'jquery';
 import { Sidenav } from 'materialize-css';
+import { SweetAlert2Module } from '@toverux/ngx-sweetalert2';
 import { UserComponent } from './components/user/user.component';
 import { PostsComponent } from './components/posts/posts.component';
 import { PostFormComponent } from './components/post-form/post-form.component';
 
 @NgModule({
   declarations: [AppComponent, UsersComponent, NavbarComponent, UserComponent, PostsComponent, PostFormComponent],
-  imports: [BrowserModule, FormsModule, HttpClientModule],
+  imports: [BrowserModule, FormsModule, HttpClientModule, SweetAlert2Module.forRoot()],
   providers: [UsersService, PostsService],
   bootstrap: [AppComponent]
 })
