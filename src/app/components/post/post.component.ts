@@ -2,7 +2,6 @@ import { Post } from './../../models/Post';
 import { PostsService } from './../../services/posts.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-post',
@@ -11,7 +10,7 @@ import { Location } from '@angular/common';
 })
 export class PostComponent implements OnInit {
   post: Post;
-  constructor(private route: ActivatedRoute, private postsService: PostsService, private location: Location) {}
+  constructor(private route: ActivatedRoute, private postsService: PostsService) {}
 
   ngOnInit() {
     const id = +this.route.snapshot.paramMap.get('id');
