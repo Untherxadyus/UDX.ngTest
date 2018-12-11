@@ -25,8 +25,8 @@ export class PostsService {
     return this.httpClient.put<Post>(url, post, httpOptions);
   }
 
-  delete(post: Post): Observable<Post> {
-    const url: string = this.baseUrl + 'posts/' + post.id;
+  delete(id: number): Observable<Post> {
+    const url: string = this.baseUrl + 'posts/' + id;
     return this.httpClient.delete<Post>(url, httpOptions);
   }
 
