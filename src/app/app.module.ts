@@ -13,10 +13,12 @@ import { SweetAlert2Module } from '@toverux/ngx-sweetalert2';
 import { UserComponent } from './components/user/user.component';
 import { PostsComponent } from './components/posts/posts.component';
 import { PostFormComponent } from './components/post-form/post-form.component';
+import { AppRoutingModule } from './app-routing.module';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
-  declarations: [AppComponent, UsersComponent, NavbarComponent, UserComponent, PostsComponent, PostFormComponent],
-  imports: [BrowserModule, FormsModule, HttpClientModule, SweetAlert2Module.forRoot()],
+  declarations: [AppComponent, UsersComponent, NavbarComponent, UserComponent, PostsComponent, PostFormComponent, HomeComponent],
+  imports: [BrowserModule, FormsModule, HttpClientModule, SweetAlert2Module.forRoot(), AppRoutingModule],
   providers: [UsersService, PostsService],
   bootstrap: [AppComponent]
 })
