@@ -15,9 +15,10 @@ import { PostsComponent } from './components/posts/posts.component';
 import { PostFormComponent } from './components/post-form/post-form.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './components/home/home.component';
+import { PostComponent } from './components/post/post.component';
 
 @NgModule({
-  declarations: [AppComponent, UsersComponent, NavbarComponent, UserComponent, PostsComponent, PostFormComponent, HomeComponent],
+  declarations: [AppComponent, UsersComponent, NavbarComponent, UserComponent, PostsComponent, PostFormComponent, HomeComponent, PostComponent],
   imports: [BrowserModule, FormsModule, HttpClientModule, SweetAlert2Module.forRoot(), AppRoutingModule],
   providers: [UsersService, PostsService],
   bootstrap: [AppComponent]
